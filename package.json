@@ -1,0 +1,9 @@
+{
+  "name": "burguer-y-vaquito-el-juego-pwa",
+  "version": "1.0.0",
+  "description": "Burguer y Vaquito: El Juego - Videojuego Retro 8-Bits Online y de a Dos en la Playa",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

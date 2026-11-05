@@ -1,0 +1,25 @@
+{
+  "name": "Burguer y Vaquito: El Juego",
+  "short_name": "Burguer y Vaquito",
+  "description": "Videojuego retro de 8 bits cooperativo online y de a dos en la playa con Vaquito y Burguer.",
+  "lang": "es-419",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#38b6ff",
+  "theme_color": "#f4d27a",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

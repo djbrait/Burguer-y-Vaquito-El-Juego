@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#38b6ff" />
+  <title>Burguer y Vaquito: El Juego (8-Bit Retro)</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="assets/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css?v=6" />
+  <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js" defer></script>
+</head>
+<body>
+  <div class="arcade-wrapper">
+    <!-- Barra Superior de Estado (HUD Estilo Retro 8-Bits) -->
+    <header class="hud-bar">
+      <!-- Tarjeta Jugador 1 -->
+      <div class="hud-card vaquito-card">
+        <div class="hud-card-top">
+          <span id="vaquito-name" class="player-name">🐄 VAQUITO (J1)</span>
+          <span id="vaquito-power-badge" class="hud-badge badge-normal">NORMAL</span>
+        </div>
+        <div class="hud-hearts-row">
+          <span id="vaquito-hearts" class="hearts-icons">❤️❤️❤️</span>
+          <span id="vaquito-hits-text" class="hits-label">Resistencia: 5/5 golpes</span>
+        </div>
+        <div class="hits-bar-bg">
+          <div id="vaquito-hits-fill" class="hits-bar-fill"></div>
+        </div>
+        <div id="vaquito-key-hint" class="power-key-hint">🥬 Lechuga → Poder <strong>Rayo Verde Ojos</strong>: <kbd>Q</kbd> / <kbd>Lanzar</kbd></div>
+        <div id="vaquito-extra-wrap" class="extra-bar-wrap" style="display: none;">
+          <span id="vaquito-extra-label" class="extra-bar-label">Vuelo: 5.0s/5s | Rayo Ojos: [Q / Lanzar]</span>
+          <div class="extra-bar-bg">
+            <div id="vaquito-extra-fill" class="extra-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Centro: Título, Puntuación y Botones Rápidos -->
+      <div class="hud-center">
+        <div class="game-mini-title">BURGUER Y VAQUITO: EL JUEGO</div>
+        <div id="hud-score" class="score-display">NIVEL 1: PLAYA | PUNTOS: 00000</div>
+        <div class="hud-actions">
+          <button id="btn-mute" class="pixel-btn small-btn" type="button">🔊 SONIDO: SÍ</button>
+          <button id="btn-toggle-touch" class="pixel-btn small-btn" type="button">📱 TÁCTIL</button>
+          <button id="btn-restart" class="pixel-btn small-btn" type="button">🔄 REINICIAR</button>
+          <button id="btn-menu" class="pixel-btn small-btn" type="button">🚪 SALIR (ESC)</button>
+        </div>
+      </div>
+
+      <!-- Tarjeta Jugador 2 -->
+      <div class="hud-card burguer-card">
+        <div class="hud-card-top">
+          <span id="burguer-name" class="player-name">🐕 BURGUER (J2)</span>
+          <span id="burguer-power-badge" class="hud-badge badge-normal">NORMAL</span>
+        </div>
+        <div class="hud-hearts-row">
+          <span id="burguer-hearts" class="hearts-icons">❤️❤️❤️</span>
+          <span id="burguer-hits-text" class="hits-label">Resistencia: 5/5 golpes</span>
+        </div>
+        <div class="hits-bar-bg">
+          <div id="burguer-hits-fill" class="hits-bar-fill"></div>
+        </div>
+        <div id="burguer-key-hint" class="power-key-hint">🥩 Carne → Poder <strong>Pelotitas Verdes</strong>: <kbd>1</kbd> / <kbd>Lanzar</kbd></div>
+        <div id="burguer-extra-wrap" class="extra-bar-wrap" style="display: none;">
+          <span id="burguer-extra-label" class="extra-bar-label">Pelotitas Verdes: [TECLA 1 / Lanzar] (15s)</span>
+          <div class="extra-bar-bg">
+            <div id="burguer-extra-fill" class="extra-bar-fill burguer-extra"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Lienzo Principal del Videojuego (960x540 Pixel-Art) -->
+    <main class="canvas-stage">
+      <canvas id="game-canvas" width="960" height="540"></canvas>
+
+      <!-- Controles Táctiles para Dispositivos Móviles (Celulares y Tablets):
+           - Abajo a la izquierda: Botón de "Lanzar"
+           - Abajo a la derecha: Botones de Arriba, Abajo, Izquierda y Derecha -->
+      <div class="touch-controls" id="touch-controls">
+        <!-- Abajo a la izquierda: Botón de "Lanzar" -->
+        <div class="touch-left-zone">
+          <button id="touch-action" class="touch-btn touch-lanzar-btn" type="button">
+            LANZAR
+          </button>
+        </div>
+
+        <!-- Abajo a la derecha: Cruceta con Arriba, Abajo, Izquierda y Derecha -->
+        <div class="touch-right-dpad" id="touch-dpad-pad">
+          <button id="touch-jump" class="touch-btn dpad-btn dpad-up" data-dir="up" type="button" aria-label="Arriba">
+            ▲<span>ARRIBA</span>
+          </button>
+          <button id="touch-left" class="touch-btn dpad-btn dpad-left" data-dir="left" type="button" aria-label="Izquierda">
+            ◀<span>IZQ</span>
+          </button>
+          <div class="dpad-center"></div>
+          <button id="touch-right" class="touch-btn dpad-btn dpad-right" data-dir="right" type="button" aria-label="Derecha">
+            ▶<span>DER</span>
+          </button>
+          <button id="touch-crouch" class="touch-btn dpad-btn dpad-down" data-dir="down" type="button" aria-label="Abajo">
+            ▼<span>ABAJO</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pantalla de Menú Principal -->
+      <div id="menu-overlay" class="overlay-screen">
+        <div class="menu-box">
+          <div class="retro-badge">★ PC, CELULAR Y TABLET | 5 PERSONAJES | PLAYA + INFIERNO VS HATER ★</div>
+          <h1 class="main-title">BURGUER Y VAQUITO:<br /><span>EL JUEGO</span></h1>
+
+          <!-- Las 5 Opciones de Personajes en la Pantalla de Inicio (1 Jugador directo al tocar uno) -->
+          <div class="roster-section">
+            <h2 class="roster-title">🌟 ELIGE 1 DE LOS 5 PERSONAJES (MODO 1 JUGADOR) O JUEGA DE A 2 ABAJO:</h2>
+            <div class="roster-grid">
+              <button class="single-char-card" data-char="vaquito" type="button">
+                <img src="assets/sprites/portraits/vaquito.png?v=4" alt="Vaquito" />
+                <strong>VAQUITO</strong>
+                <span class="diet-badge lettuce-diet">🥬 Solo Lechuga</span>
+                <small>SuperVaquito: Vuela 5s + Rayo Verde (<kbd>Q</kbd>/<kbd>Lanzar</kbd>)</small>
+              </button>
+
+              <button class="single-char-card" data-char="burguer" type="button">
+                <img src="assets/sprites/portraits/burguer.png?v=4" alt="Burguer" />
+                <strong>BURGUER</strong>
+                <span class="diet-badge meat-diet">🥩 Solo Carne</span>
+                <small>SuperBurguer: Pelotitas Verdes (<kbd>Q</kbd>/<kbd>Lanzar</kbd>)</small>
+              </button>
+
+              <button class="single-char-card" data-char="jack" type="button">
+                <img src="assets/sprites/portraits/jack.png?v=4" alt="Jack" />
+                <strong>JACK</strong>
+                <span class="diet-badge meat-diet">🥩 Solo Carne</span>
+                <small>SuperJack: Lanza una Katana (<kbd>Q</kbd>/<kbd>Lanzar</kbd>)</small>
+              </button>
+
+              <button class="single-char-card" data-char="vaquita" type="button">
+                <img src="assets/sprites/portraits/vaquita.png?v=4" alt="Vaquita" />
+                <strong>VAQUITA</strong>
+                <span class="diet-badge lettuce-diet">🥬 Solo Lechuga</span>
+                <small>SuperVaquita: Hechizo Violeta (<kbd>Q</kbd>/<kbd>Lanzar</kbd>)</small>
+              </button>
+
+              <button class="single-char-card" data-char="flex" type="button">
+                <img src="assets/sprites/portraits/flex.png?v=4" alt="Flex" />
+                <strong>FLEX</strong>
+                <span class="diet-badge meat-diet">🥩 Solo Carne</span>
+                <small>SuperFlex: Crece + Bola de Fuego (<kbd>Q</kbd>/<kbd>Lanzar</kbd>)</small>
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-columns">
+            <!-- Columna Izquierda: 2 Jugadores (Mismo dispositivo o Dispositivos Diferentes Online) -->
+            <div class="menu-col">
+              <h2>👥 MODO 2 JUGADORES</h2>
+              <button id="btn-play-local" class="pixel-btn primary-btn full-w" type="button">
+                👥 JUGAR DE A 2 (MISMO TECLADO)
+              </button>
+
+              <div class="online-box">
+                <h3>🌐 JUGAR DE A 2 EN DISPOSITIVOS DIFERENTES</h3>
+                <div class="online-stack">
+                  <input
+                    id="room-code-input"
+                    type="text"
+                    maxlength="8"
+                    placeholder="CÓDIGO DE SALA (ej. PLAYA)"
+                    class="pixel-input full-w"
+                  />
+                  <button id="btn-host-room" class="pixel-btn host-btn full-w" type="button">
+                    ➕ CREAR SALA (JUGADOR 1)
+                  </button>
+                  <button id="btn-join-room" class="pixel-btn join-btn full-w" type="button">
+                    🔗 UNIRSE A SALA (JUGADOR 2)
+                  </button>
+                </div>
+                <div id="online-status" class="online-status">
+                  Para jugar en 2 dispositivos: uno toca "Crear Sala" y el otro escribe el código y toca "Unirse a Sala".
+                </div>
+                <button
+                  id="btn-start-online-match"
+                  class="pixel-btn primary-btn full-w"
+                  type="button"
+                  style="display: none; margin-top: 6px;"
+                >
+                  🚀 ELEGIR PERSONAJES Y EMPEZAR ONLINE
+                </button>
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Link Público para Celulares/Tablets y Controles -->
+            <div class="menu-col rules-col">
+              <h2>📱 ABRIR EN CELULAR, TABLET U OTRO DISPOSITIVO</h2>
+              <div class="public-access-box">
+                <div class="public-url-row">
+                  <span class="url-tag">🌍 LINK PÚBLICO (Cualquier red / 4G / Wi-Fi):</span>
+                  <div class="url-copy-line">
+                    <code id="public-url-text">Generando link público...</code>
+                    <button id="btn-copy-public" class="pixel-btn small-btn" type="button">📋 COPIAR</button>
+                  </div>
+                </div>
+                <div class="public-url-row" style="margin-top: 6px;">
+                  <span class="url-tag">📶 LINK EN TU MISMO WI-FI:</span>
+                  <code id="lan-url-text">http://192.168.1.40:3000</code>
+                </div>
+              </div>
+
+              <h2 style="margin-top: 10px;">🎮 CONTROLES (PC Y MÓVIL)</h2>
+              <div class="controls-grid">
+                <div class="ctrl-box">
+                  <strong>📱 CELULAR Y TABLET</strong>
+                  <span>Abajo Derecha: <kbd>▲</kbd> <kbd>▼</kbd> <kbd>◀</kbd> <kbd>▶</kbd></span>
+                  <span class="highlight-ctrl">Abajo Izquierda: Botón <kbd>LANZAR</kbd></span>
+                </div>
+                <div class="ctrl-box">
+                  <strong>💻 TECLADO PC</strong>
+                  <span>J1: <kbd>WASD</kbd> + Poder <kbd>Q</kbd></span>
+                  <span>J2: <kbd>Flechas</kbd> + Poder <kbd>1</kbd></span>
+                  <span>Salir al menú: Tecla <kbd>ESC</kbd></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pantallita de Selección de Personajes para 2 Jugadores (No se pueden repetir personajes) -->
+      <div id="char-select-modal" class="overlay-screen hidden">
+        <div class="select-modal-box">
+          <h2>👥 ELIGE LOS PERSONAJES PARA 2 JUGADORES</h2>
+          <p class="select-sub">No se pueden repetir personajes entre el Jugador 1 y el Jugador 2:</p>
+
+          <div class="player-select-block">
+            <h3>🕹️ JUGADOR 1 (Controles: WASD + Poder con <kbd>Q</kbd>)</h3>
+            <div class="select-row-grid">
+              <button class="char-opt-btn p1-char-opt selected" data-char="vaquito" type="button">
+                <img src="assets/sprites/portraits/vaquito.png?v=4" alt="Vaquito" />
+                <span>VAQUITO</span>
+                <small>🥬 Rayo Verde</small>
+                <em class="lock-tag"></em>
+              </button>
+              <button class="char-opt-btn p1-char-opt" data-char="burguer" type="button">
+                <img src="assets/sprites/portraits/burguer.png?v=4" alt="Burguer" />
+                <span>BURGUER</span>
+                <small>🥩 Pelotitas</small>
+                <em class="lock-tag"></em>
+              </button>
+              <button class="char-opt-btn p1-char-opt" data-char="jack" type="button">
+                <img src="assets/sprites/portraits/jack.png?v=4" alt="Jack" />
+                <span>JACK</span>
+                <small>🥩 Katana</small>
+                <em class="lock-tag"></em>
+              </button>
+              <button class="char-opt-btn p1-char-opt" data-char="vaquita" type="button">
+                <img src="assets/sprites/portraits/vaquita.png?v=4" alt="Vaquita" />
+                <span>VAQUITA</span>
+                <small>🥬 Hechizo Violeta</small>
+                <em class="lock-tag"></em>
+              </button>
+              <button class="char-opt-btn p1-char-opt" data-char="flex" type="button">
+                <img src="assets/sprites/portraits/flex.png?v=4" alt="Flex" />
+                <span>FLEX</span>
+                <small>🥩 Fuego + Crece</small>
+                <em class="lock-tag"></em>
+              </button>
+            </div>
+          </div>
+
+          <div class="player-select-block">
+            <h3>🕹️ JUGADOR 2 (Controles: Flechas + Poder con <kbd>1</kbd> derecha)</h3>
+            <div class="select-row-grid">
+              <button class="char-opt-btn p2-char-opt" data-char="vaquito" type="button">
+                <img src="assets/sprites/portraits/vaquito.png?v=4" alt="Vaquito" />
+                <span>VAQUITO</span>
+                <small>🥬 Rayo Verde</small>
+                <em class="lock-tag"></em>
+              </button>
+              <button class="char-opt-btn p2-char-opt selected" data-char="burguer" type="button">
+                <img src="assets/sprites/portraits/burguer.png?v=4" alt="Burguer" />
+                <span>BURGUER</span>
+                <small>🥩 Pelotitas</small>
+                <em class="lock-tag"></em>
+              </button>
+              <button class="char-opt-btn p2-char-opt" data-char="jack" type="button">
+                <img src="assets/sprites/portraits/jack.png?v=4" alt="Jack" />
+                <span>JACK</span>
+                <small>🥩 Katana</small>
+                <em class="lock-tag"></em>
+              </button>
+              <button class="char-opt-btn p2-char-opt" data-char="vaquita" type="button">
+                <img src="assets/sprites/portraits/vaquita.png?v=4" alt="Vaquita" />
+                <span>VAQUITA</span>
+                <small>🥬 Hechizo Violeta</small>
+                <em class="lock-tag"></em>
+              </button>
+              <button class="char-opt-btn p2-char-opt" data-char="flex" type="button">
+                <img src="assets/sprites/portraits/flex.png?v=4" alt="Flex" />
+                <span>FLEX</span>
+                <small>🥩 Fuego + Crece</small>
+                <em class="lock-tag"></em>
+              </button>
+            </div>
+          </div>
+
+          <div class="select-modal-actions">
+            <button id="btn-cancel-2p" class="pixel-btn secondary-btn" type="button">VOLVER</button>
+            <button id="btn-confirm-2p" class="pixel-btn primary-btn" type="button">🚀 ¡EMPEZAR PARTIDA DE A 2!</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pantallita al tocar ESC: "¿Seguro que quieres salir?" con botones No y Si -->
+      <div id="esc-modal" class="overlay-screen hidden">
+        <div class="end-box esc-box">
+          <h2>¿Seguro que quieres salir?</h2>
+          <div class="esc-buttons">
+            <button id="btn-esc-no" class="pixel-btn primary-btn esc-choice-btn" type="button">No</button>
+            <button id="btn-esc-yes" class="pixel-btn danger-btn esc-choice-btn" type="button">Si</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal de Victoria / Fin del Juego -->
+      <div id="end-modal" class="overlay-screen hidden">
+        <div class="end-box">
+          <h2 id="end-title">¡VICTORIA DEFINITIVA!</h2>
+          <p id="end-desc">¡Derrotaron al Hater y tocaron la Computadora!</p>
+          <div class="end-buttons">
+            <button id="btn-play-again" class="pixel-btn primary-btn" type="button">🔄 JUGAR OTRA VEZ</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/audio.js?v=6"></script>
+  <script src="js/sprites.js?v=6"></script>
+  <script src="js/network.js?v=6"></script>
+  <script src="js/game.js?v=6"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js?v=6').then((reg) => reg.update()).catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

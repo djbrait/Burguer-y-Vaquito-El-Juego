@@ -1,0 +1,1546 @@
+{
+  "cellW": 220,
+  "cellH": 220,
+  "characters": {
+    "vaquito": {
+      "idle": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 134,
+          "contentH": 154
+        },
+        {
+          "index": 1,
+          "x": 220,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 124,
+          "contentH": 159
+        },
+        {
+          "index": 2,
+          "x": 440,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 124,
+          "contentH": 159
+        }
+      ],
+      "walk": [
+        {
+          "index": 3,
+          "x": 660,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 121,
+          "contentH": 163
+        },
+        {
+          "index": 4,
+          "x": 880,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 121,
+          "contentH": 162
+        },
+        {
+          "index": 5,
+          "x": 1100,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 129,
+          "contentH": 163
+        }
+      ],
+      "jump": [
+        {
+          "index": 6,
+          "x": 1320,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 134,
+          "contentH": 162
+        },
+        {
+          "index": 7,
+          "x": 1540,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 135,
+          "contentH": 168
+        }
+      ],
+      "fall": [
+        {
+          "index": 8,
+          "x": 1760,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 124,
+          "contentH": 154
+        },
+        {
+          "index": 9,
+          "x": 1980,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 134,
+          "contentH": 163
+        }
+      ],
+      "crouch": [
+        {
+          "index": 10,
+          "x": 2200,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 124,
+          "contentH": 159
+        },
+        {
+          "index": 11,
+          "x": 2420,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 135,
+          "contentH": 119
+        }
+      ],
+      "hit": [
+        {
+          "index": 12,
+          "x": 2640,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 148,
+          "contentH": 182
+        },
+        {
+          "index": 13,
+          "x": 2860,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 138,
+          "contentH": 185
+        }
+      ]
+    },
+    "burguer": {
+      "idle": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 125,
+          "contentH": 156
+        },
+        {
+          "index": 1,
+          "x": 220,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 117,
+          "contentH": 160
+        },
+        {
+          "index": 2,
+          "x": 440,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 113,
+          "contentH": 160
+        }
+      ],
+      "walk": [
+        {
+          "index": 3,
+          "x": 660,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 141,
+          "contentH": 152
+        },
+        {
+          "index": 4,
+          "x": 880,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 141,
+          "contentH": 148
+        },
+        {
+          "index": 5,
+          "x": 1100,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 137,
+          "contentH": 152
+        }
+      ],
+      "jump": [
+        {
+          "index": 6,
+          "x": 1320,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 137,
+          "contentH": 160
+        },
+        {
+          "index": 7,
+          "x": 1540,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 137,
+          "contentH": 164
+        }
+      ],
+      "fall": [
+        {
+          "index": 8,
+          "x": 1760,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 129,
+          "contentH": 152
+        },
+        {
+          "index": 9,
+          "x": 1980,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 133,
+          "contentH": 132
+        }
+      ],
+      "crouch": [
+        {
+          "index": 10,
+          "x": 2200,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 121,
+          "contentH": 128
+        },
+        {
+          "index": 11,
+          "x": 2420,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 121,
+          "contentH": 116
+        }
+      ],
+      "hit": [
+        {
+          "index": 12,
+          "x": 2640,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 133,
+          "contentH": 160
+        },
+        {
+          "index": 13,
+          "x": 2860,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 137,
+          "contentH": 160
+        }
+      ]
+    },
+    "super_vaquito": {
+      "idle": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 134,
+          "contentH": 154
+        },
+        {
+          "index": 1,
+          "x": 220,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 130,
+          "contentH": 159
+        },
+        {
+          "index": 2,
+          "x": 440,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 134,
+          "contentH": 159
+        }
+      ],
+      "walk": [
+        {
+          "index": 3,
+          "x": 660,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 177,
+          "contentH": 163
+        },
+        {
+          "index": 4,
+          "x": 880,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 157,
+          "contentH": 163
+        },
+        {
+          "index": 5,
+          "x": 1100,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 159,
+          "contentH": 163
+        }
+      ],
+      "jump": [
+        {
+          "index": 6,
+          "x": 1320,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 138,
+          "contentH": 163
+        },
+        {
+          "index": 7,
+          "x": 1540,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 143,
+          "contentH": 168
+        }
+      ],
+      "fall": [
+        {
+          "index": 8,
+          "x": 1760,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 181,
+          "contentH": 154
+        },
+        {
+          "index": 9,
+          "x": 1980,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 161,
+          "contentH": 163
+        }
+      ],
+      "crouch": [
+        {
+          "index": 10,
+          "x": 2200,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 140,
+          "contentH": 159
+        },
+        {
+          "index": 11,
+          "x": 2420,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 173,
+          "contentH": 121
+        }
+      ],
+      "hit": [
+        {
+          "index": 12,
+          "x": 2640,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 148,
+          "contentH": 182
+        },
+        {
+          "index": 13,
+          "x": 2860,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 168,
+          "contentH": 186
+        }
+      ]
+    },
+    "super_burguer": {
+      "idle": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 124,
+          "contentH": 156
+        },
+        {
+          "index": 1,
+          "x": 220,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 129,
+          "contentH": 160
+        },
+        {
+          "index": 2,
+          "x": 440,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 145,
+          "contentH": 160
+        }
+      ],
+      "walk": [
+        {
+          "index": 3,
+          "x": 660,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 141,
+          "contentH": 160
+        },
+        {
+          "index": 4,
+          "x": 880,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 141,
+          "contentH": 168
+        },
+        {
+          "index": 5,
+          "x": 1100,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 137,
+          "contentH": 168
+        }
+      ],
+      "jump": [
+        {
+          "index": 6,
+          "x": 1320,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 137,
+          "contentH": 164
+        },
+        {
+          "index": 7,
+          "x": 1540,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 137,
+          "contentH": 168
+        }
+      ],
+      "fall": [
+        {
+          "index": 8,
+          "x": 1760,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 149,
+          "contentH": 160
+        },
+        {
+          "index": 9,
+          "x": 1980,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 133,
+          "contentH": 152
+        }
+      ],
+      "crouch": [
+        {
+          "index": 10,
+          "x": 2200,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 128,
+          "contentH": 128
+        },
+        {
+          "index": 11,
+          "x": 2420,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 129,
+          "contentH": 116
+        }
+      ],
+      "hit": [
+        {
+          "index": 12,
+          "x": 2640,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 141,
+          "contentH": 160
+        },
+        {
+          "index": 13,
+          "x": 2860,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 137,
+          "contentH": 184
+        }
+      ]
+    },
+    "hater": {
+      "idle": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 216,
+          "contentH": 205
+        },
+        {
+          "index": 1,
+          "x": 220,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 180,
+          "contentH": 205
+        },
+        {
+          "index": 2,
+          "x": 440,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 180,
+          "contentH": 206
+        }
+      ],
+      "walk": [
+        {
+          "index": 3,
+          "x": 660,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 175,
+          "contentH": 196
+        },
+        {
+          "index": 4,
+          "x": 880,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 154,
+          "contentH": 196
+        },
+        {
+          "index": 5,
+          "x": 1100,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 165,
+          "contentH": 196
+        }
+      ],
+      "jump": [
+        {
+          "index": 6,
+          "x": 1320,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 170,
+          "contentH": 181
+        },
+        {
+          "index": 7,
+          "x": 1540,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 173,
+          "contentH": 183
+        }
+      ],
+      "fall": [
+        {
+          "index": 8,
+          "x": 1760,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 170,
+          "contentH": 175
+        },
+        {
+          "index": 9,
+          "x": 1980,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 175,
+          "contentH": 175
+        }
+      ],
+      "crouch": [
+        {
+          "index": 10,
+          "x": 2200,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 141,
+          "contentH": 148
+        },
+        {
+          "index": 11,
+          "x": 2420,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 145,
+          "contentH": 147
+        }
+      ],
+      "hit": [
+        {
+          "index": 12,
+          "x": 2640,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 162,
+          "contentH": 163
+        },
+        {
+          "index": 13,
+          "x": 2860,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 164,
+          "contentH": 163
+        }
+      ]
+    },
+    "vaquita": {
+      "idle": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 147,
+          "contentH": 166
+        },
+        {
+          "index": 1,
+          "x": 220,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 132,
+          "contentH": 166
+        },
+        {
+          "index": 2,
+          "x": 440,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 128,
+          "contentH": 175
+        }
+      ],
+      "walk": [
+        {
+          "index": 3,
+          "x": 660,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 141,
+          "contentH": 169
+        },
+        {
+          "index": 4,
+          "x": 880,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 152,
+          "contentH": 169
+        },
+        {
+          "index": 5,
+          "x": 1100,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 142,
+          "contentH": 169
+        }
+      ],
+      "jump": [
+        {
+          "index": 6,
+          "x": 1320,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 147,
+          "contentH": 178
+        },
+        {
+          "index": 7,
+          "x": 1540,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 150,
+          "contentH": 188
+        }
+      ],
+      "fall": [
+        {
+          "index": 8,
+          "x": 1760,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 146,
+          "contentH": 183
+        },
+        {
+          "index": 9,
+          "x": 1980,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 150,
+          "contentH": 161
+        }
+      ],
+      "crouch": [
+        {
+          "index": 10,
+          "x": 2200,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 147,
+          "contentH": 156
+        },
+        {
+          "index": 11,
+          "x": 2420,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 150,
+          "contentH": 119
+        }
+      ],
+      "hit": [
+        {
+          "index": 12,
+          "x": 2640,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 150,
+          "contentH": 175
+        },
+        {
+          "index": 13,
+          "x": 2860,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 150,
+          "contentH": 180
+        }
+      ]
+    },
+    "super_vaquita": {
+      "idle": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 151,
+          "contentH": 168
+        },
+        {
+          "index": 1,
+          "x": 220,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 137,
+          "contentH": 204
+        },
+        {
+          "index": 2,
+          "x": 440,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 134,
+          "contentH": 177
+        }
+      ],
+      "walk": [
+        {
+          "index": 3,
+          "x": 660,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 146,
+          "contentH": 172
+        },
+        {
+          "index": 4,
+          "x": 880,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 155,
+          "contentH": 172
+        },
+        {
+          "index": 5,
+          "x": 1100,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 147,
+          "contentH": 171
+        }
+      ],
+      "jump": [
+        {
+          "index": 6,
+          "x": 1320,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 151,
+          "contentH": 181
+        },
+        {
+          "index": 7,
+          "x": 1540,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 154,
+          "contentH": 197
+        }
+      ],
+      "fall": [
+        {
+          "index": 8,
+          "x": 1760,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 154,
+          "contentH": 185
+        },
+        {
+          "index": 9,
+          "x": 1980,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 154,
+          "contentH": 163
+        }
+      ],
+      "crouch": [
+        {
+          "index": 10,
+          "x": 2200,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 151,
+          "contentH": 155
+        },
+        {
+          "index": 11,
+          "x": 2420,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 154,
+          "contentH": 120
+        }
+      ],
+      "hit": [
+        {
+          "index": 12,
+          "x": 2640,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 154,
+          "contentH": 180
+        },
+        {
+          "index": 13,
+          "x": 2860,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 154,
+          "contentH": 184
+        }
+      ]
+    },
+    "flex": {
+      "idle": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 149,
+          "contentH": 169
+        },
+        {
+          "index": 1,
+          "x": 220,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 138,
+          "contentH": 168
+        },
+        {
+          "index": 2,
+          "x": 440,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 134,
+          "contentH": 168
+        }
+      ],
+      "walk": [
+        {
+          "index": 3,
+          "x": 660,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 172,
+          "contentH": 168
+        },
+        {
+          "index": 4,
+          "x": 880,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 157,
+          "contentH": 168
+        },
+        {
+          "index": 5,
+          "x": 1100,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 157,
+          "contentH": 168
+        }
+      ],
+      "jump": [
+        {
+          "index": 6,
+          "x": 1320,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 168,
+          "contentH": 173
+        },
+        {
+          "index": 7,
+          "x": 1540,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 163,
+          "contentH": 186
+        }
+      ],
+      "fall": [
+        {
+          "index": 8,
+          "x": 1760,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 125,
+          "contentH": 177
+        },
+        {
+          "index": 9,
+          "x": 1980,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 159,
+          "contentH": 179
+        }
+      ],
+      "crouch": [
+        {
+          "index": 10,
+          "x": 2200,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 121,
+          "contentH": 149
+        },
+        {
+          "index": 11,
+          "x": 2420,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 144,
+          "contentH": 110
+        }
+      ],
+      "hit": [
+        {
+          "index": 12,
+          "x": 2640,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 125,
+          "contentH": 168
+        },
+        {
+          "index": 13,
+          "x": 2860,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 135,
+          "contentH": 168
+        }
+      ]
+    },
+    "jack": {
+      "idle": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 152,
+          "contentH": 170
+        },
+        {
+          "index": 1,
+          "x": 220,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 153,
+          "contentH": 170
+        },
+        {
+          "index": 2,
+          "x": 440,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 137,
+          "contentH": 170
+        }
+      ],
+      "walk": [
+        {
+          "index": 3,
+          "x": 660,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 161,
+          "contentH": 161
+        },
+        {
+          "index": 4,
+          "x": 880,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 169,
+          "contentH": 161
+        },
+        {
+          "index": 5,
+          "x": 1100,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 169,
+          "contentH": 161
+        }
+      ],
+      "jump": [
+        {
+          "index": 6,
+          "x": 1320,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 145,
+          "contentH": 162
+        },
+        {
+          "index": 7,
+          "x": 1540,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 192,
+          "contentH": 162
+        }
+      ],
+      "fall": [
+        {
+          "index": 8,
+          "x": 1760,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 160,
+          "contentH": 161
+        },
+        {
+          "index": 9,
+          "x": 1980,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 152,
+          "contentH": 209
+        }
+      ],
+      "crouch": [
+        {
+          "index": 10,
+          "x": 2200,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 216,
+          "contentH": 97
+        },
+        {
+          "index": 11,
+          "x": 2420,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 193,
+          "contentH": 113
+        }
+      ],
+      "hit": [
+        {
+          "index": 12,
+          "x": 2640,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 136,
+          "contentH": 161
+        },
+        {
+          "index": 13,
+          "x": 2860,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 177,
+          "contentH": 161
+        }
+      ]
+    },
+    "super_jack": {
+      "idle": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 153,
+          "contentH": 169
+        },
+        {
+          "index": 1,
+          "x": 220,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 153,
+          "contentH": 169
+        },
+        {
+          "index": 2,
+          "x": 440,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 153,
+          "contentH": 169
+        }
+      ],
+      "walk": [
+        {
+          "index": 3,
+          "x": 660,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 169,
+          "contentH": 161
+        },
+        {
+          "index": 4,
+          "x": 880,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 169,
+          "contentH": 161
+        },
+        {
+          "index": 5,
+          "x": 1100,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 169,
+          "contentH": 169
+        }
+      ],
+      "jump": [
+        {
+          "index": 6,
+          "x": 1320,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 177,
+          "contentH": 201
+        },
+        {
+          "index": 7,
+          "x": 1540,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 192,
+          "contentH": 162
+        }
+      ],
+      "fall": [
+        {
+          "index": 8,
+          "x": 1760,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 160,
+          "contentH": 161
+        },
+        {
+          "index": 9,
+          "x": 1980,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 152,
+          "contentH": 209
+        }
+      ],
+      "crouch": [
+        {
+          "index": 10,
+          "x": 2200,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 216,
+          "contentH": 121
+        },
+        {
+          "index": 11,
+          "x": 2420,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 193,
+          "contentH": 113
+        }
+      ],
+      "hit": [
+        {
+          "index": 12,
+          "x": 2640,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 160,
+          "contentH": 161
+        },
+        {
+          "index": 13,
+          "x": 2860,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 177,
+          "contentH": 169
+        }
+      ]
+    },
+    "super_flex": {
+      "idle": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 149,
+          "contentH": 169
+        },
+        {
+          "index": 1,
+          "x": 220,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 138,
+          "contentH": 168
+        },
+        {
+          "index": 2,
+          "x": 440,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 134,
+          "contentH": 168
+        }
+      ],
+      "walk": [
+        {
+          "index": 3,
+          "x": 660,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 172,
+          "contentH": 168
+        },
+        {
+          "index": 4,
+          "x": 880,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 157,
+          "contentH": 168
+        },
+        {
+          "index": 5,
+          "x": 1100,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 157,
+          "contentH": 168
+        }
+      ],
+      "jump": [
+        {
+          "index": 6,
+          "x": 1320,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 168,
+          "contentH": 173
+        },
+        {
+          "index": 7,
+          "x": 1540,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 163,
+          "contentH": 186
+        }
+      ],
+      "fall": [
+        {
+          "index": 8,
+          "x": 1760,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 125,
+          "contentH": 177
+        },
+        {
+          "index": 9,
+          "x": 1980,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 159,
+          "contentH": 179
+        }
+      ],
+      "crouch": [
+        {
+          "index": 10,
+          "x": 2200,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 121,
+          "contentH": 149
+        },
+        {
+          "index": 11,
+          "x": 2420,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 144,
+          "contentH": 110
+        }
+      ],
+      "hit": [
+        {
+          "index": 12,
+          "x": 2640,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 125,
+          "contentH": 168
+        },
+        {
+          "index": 13,
+          "x": 2860,
+          "y": 0,
+          "w": 220,
+          "h": 220,
+          "contentW": 135,
+          "contentH": 168
+        }
+      ]
+    }
+  }
+}
